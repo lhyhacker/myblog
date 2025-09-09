@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>114514</title>
+    <meta name="description" content="LHY的个人博客，分享刷机技术、成砖经验和个人思考">
+    <title>LHY的个人博客</title>
     <style>
         * {
             margin: 0;
@@ -12,34 +13,45 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             background-color: #f4f4f4;
             color: #333;
+            background-image: url('bg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
         }
         
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            background: rgba(173, 216, 230, 0.7);
+            color: #333;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .container {
             width: 80%;
+            max-width: 1200px;
             margin: 0 auto;
             overflow: hidden;
         }
         
         nav {
-            background: #444;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             padding: 1rem 0;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
         
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         
         nav li {
@@ -47,30 +59,79 @@
         }
         
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #000080;
         }
         
         .main-content {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             margin: 1rem 0;
-            border-radius: 5px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         
         .blog-post {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .blog-post:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        .blog-post:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        .blog-post:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        .blog-post:nth-child(5) {
+            animation-delay: 0.4s;
         }
         
         .blog-post:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
         
         .blog-post h2 {
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .blog-post h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
         }
         
         .post-meta {
@@ -79,19 +140,76 @@
             margin-bottom: 1rem;
         }
         
-        .sidebar {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-top: 1rem;
+        .blog-post p {
+            margin-bottom: 1rem;
+        }
+        
+        .blog-post a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post a:hover {
+            color: #764ba2;
+            background: rgba(102, 126, 234, 0.1);
+            text-decoration: none;
+        }
+        
+        .update-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .update-content li {
+            margin-bottom: 0.5rem;
         }
         
         footer {
-            background: #333;
-            color: #fff;
+            background: rgba(173, 216, 230, 0.7);
+            color: #333;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.3rem 0.5rem;
+            }
+            
+            .main-content {
+                padding: 1.5rem;
+                margin: 0.5rem 0;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
         }
     </style>
 </head>
@@ -102,32 +220,87 @@
             <p>小天才满级傻逼砖家</p>
         </div>
     </header>
-    
+        
     <div class="container">
-        <div class="main-content">
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
             <article class="blog-post">
                 <h2>我的第一篇博客</h2>
                 <div class="post-meta">发布于 2025年9月7日 | 作者: LHY</div>
                 <p>不欢迎来到我的个人博客！这是我第114514次搭建博客网站，希望能在这里让我能装逼。</p>
                 <p>作为一个刷机技术爱好者，我会分享一些成砖经验、技术教程以及个人思考。</p>
             </article>
+            
+            <article class="blog-post">
                 <h2>手表被收了呜呜呜</h2>
                 <div class="post-meta">发布于 2025年9月8日 | 作者: LHY</div>
                 <p>手表被收了，卧槽了啊！！！</p>
-		<p>--------------------------------------------------------------------------------------------</p>
             </article>
+            
+            <article class="blog-post">
                 <h2>牛逼计算机课摸鱼小网站</h2>
                 <div class="post-meta">发布于 2025年9月8日 | 作者: LHY</div>
                 <p><a href="https://mc.js.cool">点击进入webmc</a></p>
                 <p><a href="https://poki.cn">点击进入游戏大全</a></p>
-		<p>--------------------------------------------------------------------------------------------</p>
             </article>
+            
+            <article class="blog-post">
+                <h2>吴为为啥要吃小鼻屎⚡⚡⚡？</h2>
+                <div class="post-meta">发布于 2025年9月8日 | 作者: LHY</div>
+                <p>吴为喜欢在男厕所里跳扭扭舞还一边吃士力架，小鼻屎也是他的最爱🤭！</p>
+                <p><a href="https://www.bilibili.com/video/BV1J4411v7g6/">点击进入小鼻屎视频(假的)</a></p>
+                <p>--------------------------------------------------------------------------------------------</p>
+            </article>
+            
+            <article class="blog-post">
+                <h2>网站更新日志</h2>
+                <div class="post-meta">发布于 2025年9月8日 | 作者: LHY</div>
+                <div class="update-content">
+                    <h3>版本 1.2 (2025年9月9日)</h3>
+                    <ul>
+                        <li>新增更新日志页面</li>
+                        <li>优化网站导航结构</li>
+                        <li>改进移动端适配效果</li>
+                        <li>修复部分链接样式问题</li>
+                    </ul>
+                    
+                    <h3>版本 1.1 (2025年9月8日)</h3>
+                    <ul>
+                        <li>重新设计网站UI界面</li>
+                        <li>添加背景图片和渐变效果</li>
+                        <li>优化文章卡片样式和动画效果</li>
+                        <li>增强网站视觉层次感</li>
+                    </ul>
+                    
+                    <h3>版本 1.0 (2025年9月7日)</h3>
+                    <ul>
+                        <li>创建个人博客网站</li>
+                        <li>发布首批博客文章</li>
+                        <li>实现基础页面布局</li>
+                        <li>添加个人联系方式</li>
+                    </ul>
+                    
+                    <p><strong>未来计划：</strong></p>
+                    <ul>
+                        <li>增加文章分类功能</li>
+                        <li>添加评论系统</li>
+                        <li>实现搜索功能</li>
+                        <li>支持夜间模式</li>
+                    </ul>
+                </div>
+            </article>
+        </main>
     </div>
     
     <footer>
         <div class="container">
             <p>&copy; 2025 LHY的个人博客. 保留所有权利.</p>
-            <p>联系我: 3781987395@qq.com</p>
+            <p>联系我: <a href="mailto:3781987395@qq.com" style="color: #333;">3781987395@qq.com</a></p>
         </div>
     </footer>
 </body>
